@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passiv House</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .illustration img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .image-caption {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-gallery .project img {
+      transition: transform 0.3s ease;
+    }
+    .project-gallery .project:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+        <div class="logo-container">
+          <img src="img/logo.png" alt="Passiv House Logo" class="logo-img" />
+          <div class="logo-text">
+            <span class="title">PASSIV HOUSE</span><br />
+            <span class="subtitle">Construcciones Passiv House SL.</span>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+    <section class="hero" id="inicio">
+      <h1>Construimos tu hogar sostenible</h1>
+      <p>En Construcciones Passiv House Sl. diseñamos y construimos viviendas para ahorrar energía en calefacción y refrigeración y un mejor confort en el interior</p>
+      <a href="#contacto" class="btn">Solicita tu presupuesto</a>
+    </section>
+  </header>
+
+  <main>
+    <section class="services" id="servicios">
+      <h2>¿Qué hace única una casa Passivhaus?</h2>
+      <div class="illustration">
+        <img src="img/esquema.jpg" alt="Esquema explicativo de una vivienda Passivhaus mostrando aislamiento térmico, hermeticidad, ventanas eficientes, ventilación con recuperación de calor y ausencia de puentes térmicos" />
+        <p class="image-caption">Esquema de funcionamiento de una vivienda Passivhaus que integra todos los principios esenciales para lograr una eficiencia energética superior y máximo confort interior.</p>
+      </div>
+      <h2>Principios Constructivos</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>1. Aislamiento térmico optimizado</h3>
+          <p>Utilizamos espesores superiores a los requeridos por la normativa, lo que garantiza confort interior tanto en invierno como en verano y reduce drásticamente la demanda energética.</p>
+        </div>
+        <div class="card">
+          <h3>2. Eliminación de puentes térmicos</h3>
+          <p>Diseñamos la envolvente del edificio para asegurar la continuidad del aislamiento, evitando zonas de fuga energética que puedan afectar al rendimiento térmico del hogar.</p>
+        </div>
+        <div class="card">
+          <h3>3. Ventanas de altas prestaciones</h3>
+          <p>Instalamos carpinterías con triple vidrio y marcos aislantes estratégicamente orientados para aprovechar la energía solar en invierno y proteger del sobrecalentamiento en verano.</p>
+        </div>
+        <div class="card">
+          <h3>4. Hermeticidad garantizada</h3>
+          <p>Controlamos la estanqueidad del edificio para minimizar las filtraciones de aire, mejorando la eficiencia térmica, reduciendo el ruido y eliminando corrientes indeseadas.</p>
+        </div>
+        <div class="card">
+          <h3>5. Ventilación con recuperación de calor</h3>
+          <p>Instalamos sistemas de ventilación mecánica con recuperación de calor que mantienen el aire limpio y saludable en el interior sin comprometer la temperatura ni la eficiencia energética.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="proyectos">
+      <h2>Proyectos Destacados</h2>
+      <div class="project-gallery">
+        <div class="project">
+          <img src="img/grao.jpg" alt="Casa Grao" />
+          <h3>Casa Grao</h3>
+        </div>
+        <div class="project">
+          <img src="img/lavina.jpg" alt="Casa Laviña" />
+          <h3>Casa Laviña</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <h2>Contacto</h2>
+      <form id="contact-form">
+        <input type="text" name="nombre" placeholder="Tu Nombre" required />
+        <input type="email" name="email" placeholder="Tu Email" required />
+        <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 PASSIV HOUSE. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
