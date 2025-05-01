@@ -299,3 +299,90 @@ footer {
     padding: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .logo-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .hero {
+    padding: 5rem 1rem;
+    min-height: auto;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+  .hero .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+  .services {
+    padding: 3rem 1rem;
+  }
+  .services h2 {
+    font-size: 1.8rem;
+  }
+  .illustration {
+    padding: 0;
+  }
+  .illustration img {
+    border-radius: 8px;
+  }
+  .image-caption {
+    font-size: 0.9rem;
+  }
+  .service-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .card {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .projects {
+    padding: 3rem 1rem;
+  }
+  .projects h2 {
+    font-size: 1.8rem;
+  }
+  .project-gallery {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .project {
+    width: 100%;
+  }
+  .contact {
+    padding: 3rem 1rem;
+  }
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+  #contact-form {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  #contact-form input,
+  #contact-form textarea {
+    font-size: 0.95rem;
+  }
+  footer {
+    font-size: 0.85rem;
+    padding: 1rem 0.5rem;
+  }
+}
