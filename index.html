@@ -7,33 +7,6 @@
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-    }
-    .illustration img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-    .image-caption {
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      color: #555;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .project-gallery .project img {
-      transition: transform 0.3s ease;
-    }
-    .project-gallery .project:hover img {
-      transform: scale(1.05);
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -53,15 +26,81 @@
       </nav>
 
     <section class="hero" id="inicio">
-      <h1>Construimos tu hogar sostenible</h1>
-      <p>En Construcciones Passiv House Sl. diseñamos y construimos viviendas para ahorrar energía en calefacción y refrigeración y un mejor confort en el interior</p>
-      <a href="#contacto" class="btn">Solicita tu presupuesto</a>
+      <div class="hero-content">
+        <span class="hero-eyebrow">Arquitectura pasiva con alma cálida</span>
+        <h1>Construimos tu hogar sostenible</h1>
+        <p>
+          En Construcciones Passiv House Sl. diseñamos y construimos viviendas de consumo casi nulo
+          combinando confort interior y estética serena con tecnología pasiva de última generación.
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn primary">Solicita tu presupuesto</a>
+          <a href="#servicios" class="btn ghost">Conoce cómo trabajamos</a>
+        </div>
+      </div>
+      <div class="hero-gallery" id="proyectos">
+        <span class="hero-caption">Proyectos destacados</span>
+        <div class="carousel" aria-roledescription="carrusel">
+          <button class="carousel-control prev" type="button" aria-label="Proyecto anterior">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 5L8 12L15 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="carousel-window">
+            <div class="carousel-track">
+              <article class="slide" aria-label="Casa Grao">
+                <div class="slide-image">
+                  <img src="img/grao.jpg" alt="Fachada minimalista de la Casa Grao" />
+                </div>
+                <div class="slide-copy">
+                  <h3>Casa Grao</h3>
+                  <p>
+                    Vivienda unifamiliar orientada al mar con envolvente térmica reforzada y ventilación de doble flujo.
+                    Su estética monolítica en hormigón blanco y vidrio se integra con el entorno mediterráneo sin renunciar
+                    a la eficiencia.
+                  </p>
+                </div>
+              </article>
+              <article class="slide" aria-label="Casa Laviña">
+                <div class="slide-image">
+                  <img src="img/lavina.jpg" alt="Interior luminoso de la Casa Laviña" />
+                </div>
+                <div class="slide-copy">
+                  <h3>Casa Laviña</h3>
+                  <p>
+                    Diseño interior luminoso que prioriza la ventilación cruzada controlada y la captación solar invernal.
+                    Tecnología pasiva combinada con domótica para un hogar eficiente las 24 horas del día.
+                  </p>
+                </div>
+              </article>
+              <article class="slide" aria-label="Residencia Bosco">
+                <div class="slide-image">
+                  <img src="img/fotostock.jpg" alt="Volúmenes geométricos de la Residencia Bosco" />
+                </div>
+                <div class="slide-copy">
+                  <h3>Residencia Bosco</h3>
+                  <p>
+                    Conjunto modular de tres niveles articulados alrededor de un patio central. Materiales de bajo impacto
+                    ambiental, hermeticidad certificada y un consumo energético casi nulo.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <button class="carousel-control next" type="button" aria-label="Proyecto siguiente">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </section>
   </header>
 
   <main>
     <section class="services" id="servicios">
       <h2>¿Qué hace única una casa Passivhaus?</h2>
+      <p>Un equilibrio perfecto entre ingeniería de precisión, confort y ahorro energético llevado a su máxima expresión.</p>
       <div class="illustration">
         <img src="img/esquema.jpg" alt="Esquema explicativo de una vivienda Passivhaus mostrando aislamiento térmico, hermeticidad, ventanas eficientes, ventilación con recuperación de calor y ausencia de puentes térmicos" />
         <p class="image-caption">Esquema de funcionamiento de una vivienda Passivhaus que integra todos los principios esenciales para lograr una eficiencia energética superior y máximo confort interior.</p>
@@ -91,17 +130,13 @@
       </div>
     </section>
 
-    <section class="projects" id="proyectos">
-      <h2>Proyectos Destacados</h2>
-      <div class="project-gallery">
-        <div class="project">
-          <img src="img/grao.jpg" alt="Casa Grao" />
-          <h3>Casa Grao</h3>
-        </div>
-        <div class="project">
-          <img src="img/lavina.jpg" alt="Casa Laviña" />
-          <h3>Casa Laviña</h3>
-        </div>
+    <section class="projects-note">
+      <div class="note-shell">
+        <h2>Arquitectura eficiente y humana</h2>
+        <p>
+          Cada proyecto Passivhaus que desarrollamos se adapta a su entorno, conserva la sobriedad cromática y añade matices
+          cálidos en los interiores para lograr espacios habitables durante todo el año.
+        </p>
       </div>
     </section>
 
