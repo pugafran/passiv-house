@@ -1,57 +1,44 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ================================================
+   PALETA BASE – NEGRO / GRIS / BLANCO
+   -----------------------------------------------
+   Puedes ajustar estas variables para cambiar tonos
+   sin tocar el resto del CSS.
+================================================= */
+:root {
+  --negro: #0d0d0d;           /* fondo principal */
+  --gris-oscuro: #1a1a1a;     /* navbar, secciones alternas */
+  --gris-medio: #2b2b2b;      /* tarjetas, fondos secundarios */
+  --gris-claro: #e0e0e0;      /* textos suaves o bordes */
+  --blanco: #ffffff;          /* textos principales y contraste */
+  --acento: #f5f5f5;          /* fondo claro para secciones blancas */
 }
+
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
+  color: var(--blanco);
+  background-color: var(--negro); /* Fondo negro general */
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #004d40;
+  background-color: var(--gris-oscuro);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 999;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
 }
 
 .logo-img {
   height: 70px;
-  width: auto;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-
-.logo-text {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.logo-text .title {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-.logo-text .subtitle {
-  font-size: 0.9rem;
-  opacity: 0.8;
+  filter: brightness(0) invert(1); /* logo blanco sobre fondo oscuro */
 }
 
 .nav-links {
@@ -61,20 +48,20 @@ body {
 }
 
 .nav-links a {
-  color: white;
+  color: var(--blanco);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #ff9800;
-}
+.nav-links a:hover { opacity: 0.7; }
 
-/* Hero Section */
+/* ================= HERO ================= */
 .hero {
   background: url('img/fotostock2.png') center/cover no-repeat;
-  color: white;
+  background-blend-mode: luminosity; /* blanco y negro */
+  background-color: #111;
+  color: var(--blanco);
   text-align: center;
   padding: 8rem 2rem;
   display: flex;
@@ -88,15 +75,14 @@ body {
 .hero::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
   z-index: 1;
 }
 
-.hero h1, .hero p, .hero .btn {
+.hero h1,
+.hero p,
+.hero .btn {
   position: relative;
   z-index: 2;
 }
@@ -104,59 +90,56 @@ body {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: var(--blanco);
 }
 
 .hero p {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 2rem;
-  max-width: 600px;
+  max-width: 650px;
+  color: var(--gris-claro);
 }
 
 .hero .btn {
-  background-color: #ff9800;
-  color: #fff;
+  background-color: var(--gris-medio);
+  color: var(--blanco);
   padding: 0.75rem 1.5rem;
-  text-decoration: none;
   border-radius: 5px;
+  text-decoration: none;
   font-weight: bold;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .hero .btn:hover {
-  background-color: #e68900;
+  background-color: var(--blanco);
+  color: var(--negro);
 }
 
-/* Services Section */
+/* ================= SERVICES ================= */
 .services {
   padding: 5rem 2rem 6rem;
-  background-color: #ffffff;
+  background-color: var(--gris-oscuro);
   text-align: center;
 }
 
 .services h2 {
   margin-bottom: 2rem;
   font-size: 2.4rem;
-  color: #004d40;
-}
-
-.illustration {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem;
+  color: var(--blanco);
 }
 
 .illustration img {
   max-width: 100%;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  filter: grayscale(100%);
 }
 
 .image-caption {
   margin-top: 1rem;
-  font-size: 1rem;
-  color: #666;
+  font-size: 0.95rem;
+  color: var(--gris-claro);
 }
 
 .service-cards {
@@ -168,36 +151,40 @@ body {
 }
 
 .card {
-  background-color: #fefefe;
+  background-color: var(--gris-medio);
   padding: 2rem;
-  border-radius: 14px;
+  border-radius: 12px;
   width: 320px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card h3 {
   margin-bottom: 1rem;
-  color: #004d40;
+  color: var(--blanco);
   font-size: 1.25rem;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.15);
+.card p {
+  color: var(--gris-claro);
 }
 
-/* Projects Section */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ================= PROJECTS ================= */
 .projects {
   padding: 5rem 2rem;
-  background-color: #f5f5f5;
+  background-color: var(--negro);
   text-align: center;
 }
 
 .projects h2 {
   margin-bottom: 2.5rem;
   font-size: 2.2rem;
-  color: #004d40;
+  color: var(--blanco);
 }
 
 .project-gallery {
@@ -217,30 +204,32 @@ body {
   height: 300px;
   object-fit: cover;
   border-radius: 16px;
-  transition: transform 0.3s ease;
+  filter: grayscale(100%);
+  transition: transform 0.3s ease, filter 0.5s ease;
 }
 
 .project:hover img {
   transform: scale(1.05);
+  filter: grayscale(0%); /* al pasar el ratón vuelve al color */
 }
 
 .project h3 {
   margin-top: 0.75rem;
-  color: #004d40;
+  color: var(--gris-claro);
   font-size: 1.2rem;
 }
 
-/* Contact Section */
+/* ================= CONTACTO ================= */
 .contact {
   padding: 5rem 2rem;
-  background-color: #ffffff;
+  background-color: var(--gris-oscuro);
   text-align: center;
 }
 
 .contact h2 {
   margin-bottom: 2.5rem;
   font-size: 2.2rem;
-  color: #004d40;
+  color: var(--blanco);
 }
 
 #contact-form {
@@ -254,137 +243,136 @@ body {
 #contact-form input,
 #contact-form textarea {
   padding: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
   border-radius: 6px;
   font-size: 1rem;
+  background-color: var(--gris-medio);
+  color: var(--blanco);
 }
 
 #contact-form button {
   padding: 1rem;
-  background-color: #004d40;
-  color: #fff;
+  background-color: var(--blanco);
+  color: var(--negro);
   border: none;
   border-radius: 6px;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 #contact-form button:hover {
-  background-color: #00332e;
+  background-color: var(--gris-claro);
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 footer {
-  background-color: #004d40;
-  color: #fff;
+  background-color: var(--gris-medio);
+  color: var(--gris-claro);
   text-align: center;
   padding: 1rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-  }
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  .service-cards, .project-gallery {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .illustration {
-    padding: 1rem;
-  }
+/* ================= CAROUSEL ================= */
+.carousel {
+  position: relative;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 3rem;
 }
 
+.carousel-viewport {
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(255,255,255,0.08);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+}
+
+.slide-caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  color: var(--blanco);
+}
+
+/* Flechas */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: var(--blanco);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.carousel-btn:hover { background: rgba(255,255,255,0.3); }
+
+.carousel-btn.prev { left: 1rem; }
+.carousel-btn.next { right: 1rem; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.carousel-dots button {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #666;
+}
+.carousel-dots button[aria-selected="true"] { background: var(--blanco); }
+
+/* === Animación de desplazamiento fluida (PRO) === */
+.carousel-track {
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+}
+
+/* Efecto de enfoque en la diapositiva activa */
+.carousel-slide {
+  transition: opacity 0.4s ease, transform 0.6s ease;
+}
+.carousel-slide.current {
+  opacity: 1;
+  transform: scale(1);
+}
+.carousel-slide:not(.current) {
+  opacity: 0.5;
+  transform: scale(0.96);
+}
+
+/* Suaviza flechas y dots durante la animación */
+.carousel-btn,
+.carousel-dots button {
+  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Respeto a reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track,
+  .carousel-slide { transition: none !important; }
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-  }
-  .logo-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  .hero {
-    padding: 5rem 1rem;
-    min-height: auto;
-  }
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero p {
-    font-size: 1.2rem;
-    padding: 0 1rem;
-  }
-  .hero .btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
-  }
-  .services {
-    padding: 3rem 1rem;
-  }
-  .services h2 {
-    font-size: 1.8rem;
-  }
-  .illustration {
-    padding: 0;
-  }
-  .illustration img {
-    border-radius: 8px;
-  }
-  .image-caption {
-    font-size: 0.9rem;
-  }
-  .service-cards {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .card {
-    width: 100%;
-    padding: 1.5rem;
-  }
-  .projects {
-    padding: 3rem 1rem;
-  }
-  .projects h2 {
-    font-size: 1.8rem;
-  }
-  .project-gallery {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .project {
-    width: 100%;
-  }
-  .contact {
-    padding: 3rem 1rem;
-  }
-  .contact h2 {
-    font-size: 1.8rem;
-  }
-  #contact-form {
-    width: 100%;
-    padding: 0 1rem;
-  }
-  #contact-form input,
-  #contact-form textarea {
-    font-size: 0.95rem;
-  }
-  footer {
-    font-size: 0.85rem;
-    padding: 1rem 0.5rem;
-  }
+  .navbar { flex-direction: column; gap: 1rem; padding: 1rem; }
+  .nav-links { flex-direction: column; gap: 1rem; }
+  .service-cards, .project-gallery { flex-direction: column; gap: 2rem; }
+  .card { width: 100%; }
+  .project { width: 100%; }
 }
