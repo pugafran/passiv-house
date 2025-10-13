@@ -73,7 +73,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: url('img/fotostock.jpg') center/cover no-repeat;
+  background: url('img/fotostock2.png') center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 8rem 2rem;
@@ -204,17 +204,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 .project {
-  width: 320px;
+  width: 500px;
   transition: transform 0.3s ease;
 }
 
 .project img {
   width: 100%;
-  border-radius: 12px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
   transition: transform 0.3s ease;
 }
 

@@ -95,24 +95,51 @@
       <h2>Proyectos Destacados</h2>
       <div class="project-gallery">
         <div class="project">
-          <img src="img/grao.jpg" alt="Casa Grao" />
-          <h3>Casa Grao</h3>
+          <img src="img/grao.jpg" alt="Modelo G" />
+          <h3>Modelo G</h3>
         </div>
         <div class="project">
-          <img src="img/lavina.jpg" alt="Casa Laviña" />
-          <h3>Casa Laviña</h3>
+          <img src="img/fotostock.jpg" alt="Modelo C" />
+          <h3>Modelo C</h3>
+        </div>
+        <div class="project">
+          <img src="img/lavina.jpg" alt="Modelo L" />
+          <h3>Modelo L</h3>
         </div>
       </div>
     </section>
 
     <section class="contact" id="contacto">
       <h2>Contacto</h2>
-      <form id="contact-form">
+      <form id="contact-form" action="https://formsubmit.co/info@passivhouse.es" method="POST">
         <input type="text" name="nombre" placeholder="Tu Nombre" required />
         <input type="email" name="email" placeholder="Tu Email" required />
         <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+
+        <!-- Opcionales -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://passivhouse.es/gracias.html">
+
         <button type="submit">Enviar</button>
       </form>
+
+      <!-- Bloque de ubicación y contacto -->
+      <div style="margin-top: 3rem;">
+        <h3 style="color: #004d40;">¿Dónde estamos?</h3>
+        <p>
+          C/ Alfredo Truan nº 6 - 1º E<br />
+          DP. 33205 Gijón - Principado de Asturias<br />
+          Teléfono: <a href="tel:+34684636210">684 63 62 10</a><br />
+          Correo: <a href="mailto:info@passivhouse.es">info@passivhouse.es</a>
+        </p>
+        <div style="margin-top: 1rem;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2910.578645453663!2d-5.664550684531327!3d43.54158137111424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd368de0cbf3c1d1%3A0x7d9302cd3d0f0f44!2sCalle%20Alfredo%20Truan%2C%206%2C%2033205%20Gij%C3%B3n%2C%20Asturias!5e0!3m2!1ses!2ses!4v1716387121784!5m2!1ses!2ses"
+            width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
     </section>
   </main>
 
