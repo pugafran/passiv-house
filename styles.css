@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: 'MiFuente';
-  src: url('/fonts/ASTURICA.TTF') format('truetype');
+  src: url('/fonts/ASTURICA.woff2') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -122,6 +122,59 @@ body {
 .hero .btn:hover {
   background-color: var(--blanco);
   color: var(--negro);
+}
+
+/* ================= COMMITMENT ================= */
+.commitment {
+  padding: 5rem 2rem 6rem;
+  background-color: var(--negro);
+  text-align: center;
+}
+
+.commitment h2 {
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  color: var(--blanco);
+}
+
+.commitment-illustration {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.commitment-illustration img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.commitment-carousel {
+  margin: 3.5rem auto 0;
+  max-width: 960px;
+}
+
+.commitment-carousel .carousel {
+  margin: 0;
+  padding: 0 2rem;
+}
+
+.commitment-carousel .carousel-viewport {
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 768px) {
+  .commitment {
+    padding-bottom: 5rem;
+  }
+
+  .commitment-carousel {
+    margin-top: 2.5rem;
+  }
+
+  .commitment-carousel .carousel {
+    padding: 0 1rem;
+  }
 }
 
 /* ================= SERVICES ================= */
@@ -383,4 +436,5 @@ footer {
   .service-cards, .project-gallery { flex-direction: column; gap: 2rem; }
   .card { width: 100%; }
   .project { width: 100%; }
+  .commitment h2 { font-size: 2rem; }
 }
