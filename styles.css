@@ -16,8 +16,16 @@
 /* Reset básico */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+
+@font-face {
+  font-family: 'MiFuente';
+  src: url('/fonts/ASTURICA.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'MiFuente', sans-serif;
   line-height: 1.6;
   color: var(--blanco);
   background-color: var(--negro); /* Fondo negro general */
