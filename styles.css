@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: 'MiFuente';
-  src: url('/fonts/ASTURICA.TTF') format('truetype');
+  src: url('/fonts/ASTURICA.woff2') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
