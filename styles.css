@@ -127,7 +127,7 @@ body {
 /* ================= COMMITMENT ================= */
 .commitment {
   padding: 5rem 2rem 6rem;
-  background-color: var(--gris-oscuro);
+  background-color: var(--negro);
   text-align: center;
 }
 
