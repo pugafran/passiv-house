@@ -16,7 +16,6 @@
 /* Reset básico */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-
 @font-face {
   font-family: 'MiFuente';
   src: url('fonts/ASTURICA.woff2') format('woff2'),
@@ -128,55 +127,96 @@ body {
 
 /* ================= COMMITMENT ================= */
 .commitment {
-  padding: 5rem 2rem 6rem;
+  padding: 5rem 0 6rem;       /* sin padding lateral -> carrusel a sangre */
   background-color: var(--negro);
   text-align: center;
 }
 
 .commitment h2 {
-  margin-bottom: 2rem;
+  margin: 0 2rem 2rem;        /* mantiene margen lateral del título */
   font-size: 2.4rem;
   color: var(--blanco);
 }
 
-.commitment-illustration {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.commitment-illustration img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-}
-
+/* ===== Carrusel full-bleed y alto grande ===== */
 .commitment-carousel {
-  margin: 3.5rem auto 0;
-  max-width: 960px;
+  width: 100vw;               /* ocupar todo el ancho del viewport */
+  margin: 3rem 0 0 50%;
+  transform: translateX(-50%); /* centra el bloque 100vw */
+  position: relative;
 }
 
 .commitment-carousel .carousel {
-  margin: 0;
-  padding: 0 2rem;
+  width: 100%;
+  max-width: none !important; /* anula el max-width global del carrusel */
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
 }
 
 .commitment-carousel .carousel-viewport {
-  border-radius: 16px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  height: clamp(420px, 80svh, 900px); /* grande; cambia a 100svh si lo quieres fullscreen real */
+  overflow: hidden;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
-@media (max-width: 768px) {
-  .commitment {
-    padding-bottom: 5rem;
-  }
+.commitment-carousel .carousel-track,
+.commitment-carousel .carousel-slide { height: 100%; }
 
-  .commitment-carousel {
-    margin-top: 2.5rem;
-  }
+.commitment-carousel .carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* llena sin deformar */
+  object-position: center;
+  display: block;
+  filter: grayscale(100%);    /* elimina si quieres en color */
+}
 
-  .commitment-carousel .carousel {
-    padding: 0 1rem;
-  }
+/* Flechas superpuestas */
+.commitment-carousel .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px; height: 56px;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(0,0,0,.35);
+  color: #fff;
+  z-index: 3;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.commitment-carousel .carousel-btn.prev { left: 1rem; }
+.commitment-carousel .carousel-btn.next { right: 1rem; }
+.commitment-carousel .carousel-btn:hover { background: rgba(255,255,255,.22); }
+
+/* Dots superpuestos (no empujan el layout) */
+.commitment-carousel .carousel-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: .5rem;
+  z-index: 3;
+  margin: 0; /* anula margen global */
+}
+.commitment-carousel .carousel-dots button {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #777;
+  opacity: .95;
+}
+.commitment-carousel .carousel-dots button[aria-selected="true"] { background: #fff; }
+
+/* Transición suave del track */
+.commitment-carousel .carousel-track {
+  transition: transform .9s cubic-bezier(.77,0,.175,1);
+  will-change: transform;
 }
 
 /* ================= SERVICES ================= */
@@ -338,7 +378,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ================= CAROUSEL ================= */
+/* ================= CAROUSEL (estilos base globales) ================= */
 .carousel {
   position: relative;
   max-width: 1100px;
@@ -367,7 +407,7 @@ footer {
   color: var(--blanco);
 }
 
-/* Flechas */
+/* Flechas (base) */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -382,10 +422,10 @@ footer {
   transition: all 0.2s ease;
 }
 .carousel-btn:hover { background: rgba(255,255,255,0.3); }
-
 .carousel-btn.prev { left: 1rem; }
 .carousel-btn.next { right: 1rem; }
 
+/* Dots (base) */
 .carousel-dots {
   display: flex;
   justify-content: center;
@@ -400,13 +440,13 @@ footer {
 }
 .carousel-dots button[aria-selected="true"] { background: var(--blanco); }
 
-/* === Animación de desplazamiento fluida (PRO) === */
+/* Animación base */
 .carousel-track {
   transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
   will-change: transform;
 }
 
-/* Efecto de enfoque en la diapositiva activa */
+/* Enfoque slide activa (base) */
 .carousel-slide {
   transition: opacity 0.4s ease, transform 0.6s ease;
 }
@@ -417,12 +457,6 @@ footer {
 .carousel-slide:not(.current) {
   opacity: 0.5;
   transform: scale(0.96);
-}
-
-/* Suaviza flechas y dots durante la animación */
-.carousel-btn,
-.carousel-dots button {
-  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Respeto a reduce motion */
@@ -439,4 +473,53 @@ footer {
   .card { width: 100%; }
   .project { width: 100%; }
   .commitment h2 { font-size: 2rem; }
+  .commitment-carousel .carousel-viewport { height: clamp(320px, 72svh, 780px); }
+}
+
+/* ===== MODO VER IMAGEN ENTERA (NINGÚN RECORTE) ===== */
+.commitment-carousel .carousel-viewport {
+  height: clamp(400px, 80svh, 900px) !important;
+  overflow: hidden;
+  background: #000; /* fondo negro para márgenes */
+}
+
+.commitment-carousel .carousel-track,
+.commitment-carousel .carousel-slide {
+  height: 100% !important;
+}
+
+/* Centramos la imagen y mostramos su tamaño completo */
+.commitment-carousel .carousel-slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+/* Imagen entera visible, manteniendo proporciones exactas */
+.commitment-carousel .carousel-slide img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important; /* CLAVE: mostrar todo */
+  object-position: center center !important;
+  display: block;
+  filter: none !important; /* por si había blanco y negro */
+  transform: none !important; /* sin zoom */
+}
+
+/* Desactivamos animaciones que deformen */
+.commitment-carousel .carousel-slide,
+.commitment-carousel .carousel-slide.current {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Ajuste responsive: algo más bajo en pantallas pequeñas */
+@media (max-width: 768px) {
+  .commitment-carousel .carousel-viewport {
+    height: clamp(300px, 70svh, 700px) !important;
+  }
 }
