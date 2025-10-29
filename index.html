@@ -27,66 +27,34 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .project-gallery .project img {
-      transition: transform 0.3s ease;
-    }
-    .project-gallery .project:hover img {
-      transform: scale(1.05);
-    }
   </style>
 </head>
 <body>
   <header>
-    <nav class="navbar">
-        <div class="logo-container">
-          <img src="img/logo-2.png" alt="Passiv House Logo" class="logo-img" />
-          <div class="logo-text">
-            <span class="title">PASSIV HOUSE</span><br />
-          </div>
-        </div>
-        <ul class="nav-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Passivhaus</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-
     <section class="hero" id="inicio">
-      <h1>Construimos tu hogar sostenible</h1>
-      <p>En Construcciones Passiv House Sl. diseñamos y construimos viviendas para ahorrar energía en calefacción y refrigeración y un mejor confort en el interior</p>
-      <a href="#contacto" class="btn">Solicita tu presupuesto</a>
-    </section>
-  </header>
-
-  <main>
-
-    <section class="commitment" id="compromiso">
-      <h2>Compromiso como mantra</h2>
-
-      <div class="commitment-carousel">
+      <div class="hero-carousel">
         <div class="carousel" aria-label="Galería de proyectos">
           <button class="carousel-btn prev" aria-label="Anterior" title="Anterior" data-dir="-1">❮</button>
 
           <div class="carousel-viewport">
             <ul class="carousel-track">
-              <li class="carousel-slide current" role="tabpanel" aria-roledescription="slide" aria-label="1 de 4">
+              <li class="carousel-slide current" role="tabpanel" aria-roledescription="slide" aria-label="1 de 5">
                 <img src="img/uno.png" alt="Exterior moderno de vivienda Passivhaus" />
                 <p class="slide-caption"></p>
               </li>
-              <li class="carousel-slide current" role="tabpanel" aria-roledescription="slide" aria-label="1 de 4">
+              <li class="carousel-slide" role="tabpanel" aria-roledescription="slide" aria-label="2 de 5">
                 <img src="img/dos.png" alt="Exterior moderno de vivienda Passivhaus" />
                 <p class="slide-caption"></p>
               </li>
-              <li class="carousel-slide" role="tabpanel" aria-roledescription="slide" aria-label="2 de 4">
+              <li class="carousel-slide" role="tabpanel" aria-roledescription="slide" aria-label="3 de 5">
                 <img src="img/tres.png" alt="Detalle de interior eficiente en energía" />
                 <p class="slide-caption"></p>
               </li>
-              <li class="carousel-slide" role="tabpanel" aria-roledescription="slide" aria-label="3 de 4">
+              <li class="carousel-slide" role="tabpanel" aria-roledescription="slide" aria-label="4 de 5">
                 <img src="img/cuatro.png" alt="Ventanas panorámicas de alta eficiencia" />
                 <p class="slide-caption"></p>
               </li>
-              <li class="carousel-slide" role="tabpanel" aria-roledescription="slide" aria-label="4 de 4">
+              <li class="carousel-slide" role="tabpanel" aria-roledescription="slide" aria-label="5 de 5">
                 <img src="img/cinco.png" alt="Terraza luminosa de una casa Passivhaus" />
                 <p class="slide-caption"></p>
               </li>
@@ -97,6 +65,23 @@
 
           <div class="carousel-dots" role="tablist" aria-label="Seleccionar diapositiva"></div>
         </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+
+    <section class="commitment" id="compromiso">
+      <h2>Compromiso como mantra</h2>
+      <div class="commitment-content">
+        <p>
+          Cada vivienda Passivhaus que desarrollamos se concibe como un espacio saludable, eficiente y con un acabado
+          arquitectónico cuidado al detalle.
+        </p>
+        <p>
+          Apostamos por soluciones sostenibles, materiales de primera calidad y un acompañamiento constante durante todo
+          el proceso constructivo para que disfrutes de un hogar preparado para el futuro.
+        </p>
       </div>
     </section>
 
@@ -129,24 +114,6 @@
         <div class="card">
           <h3>5. Ventilación con recuperación de calor</h3>
           <p>Instalamos sistemas de ventilación mecánica con recuperación de calor que mantienen el aire limpio y saludable en el interior sin comprometer la temperatura ni la eficiencia energética.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects" id="proyectos">
-      <h2>Proyectos Destacados</h2>
-      <div class="project-gallery">
-        <div class="project">
-          <img src="img/grao.jpg" alt="Modelo G" />
-          <h3>Modelo G</h3>
-        </div>
-        <div class="project">
-          <img src="img/fotostock.jpg" alt="Modelo C" />
-          <h3>Modelo C</h3>
-        </div>
-        <div class="project">
-          <img src="img/lavina.jpg" alt="Modelo L" />
-          <h3>Modelo L</h3>
         </div>
       </div>
     </section>
