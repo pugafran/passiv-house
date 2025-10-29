@@ -1,541 +1,283 @@
 /* ================================================
    PALETA BASE – NEGRO / GRIS / BLANCO
-   -----------------------------------------------
-   Puedes ajustar estas variables para cambiar tonos
-   sin tocar el resto del CSS.
 ================================================= */
-:root {
-  --negro: #0d0d0d;           /* fondo principal */
-  --gris-oscuro: #1a1a1a;     /* navbar, secciones alternas */
-  --gris-medio: #2b2b2b;      /* tarjetas, fondos secundarios */
-  --gris-claro: #e0e0e0;      /* textos suaves o bordes */
-  --blanco: #ffffff;          /* textos principales y contraste */
-  --acento: #f5f5f5;          /* fondo claro para secciones blancas */
+:root{
+  --negro:#0d0d0d;
+  --gris-oscuro:#1a1a1a;
+  --gris-medio:#2b2b2b;
+  --gris-claro:#e0e0e0;
+  --blanco:#ffffff;
+  --acento:#f5f5f5;
 }
 
-/* Reset básico */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* ================= RESET & BASE ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow-x:hidden;background:var(--negro);color:var(--blanco);line-height:1.6}
 
-@font-face {
-  font-family: 'MiFuente';
-  src: url('fonts/ASTURICA.woff2') format('woff2'),
-       url('fonts/ASTURICA.TTF') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+@font-face{
+  font-family:'MiFuente';
+  src:url('fonts/ASTURICA.woff2') format('woff2'),
+      url('fonts/ASTURICA.TTF') format('truetype');
+  font-weight:normal;font-style:normal;font-display:swap;
 }
-
-body {
-  font-family: 'MiFuente', sans-serif;
-  line-height: 1.6;
-  color: var(--blanco);
-  background-color: var(--negro); /* Fondo negro general */
-}
+body{font-family:'MiFuente','Montserrat',sans-serif}
 
 /* ================= NAVBAR ================= */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--gris-oscuro);
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+.navbar{
+  display:flex;justify-content:space-between;align-items:center;
+  background:var(--gris-oscuro);padding:1rem 2rem;position:sticky;top:0;z-index:999;
+  box-shadow:0 2px 8px rgba(255,255,255,.05);
 }
-
-.logo-img {
-  height: 70px;
-  filter: brightness(0) invert(1); /* logo blanco sobre fondo oscuro */
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: var(--blanco);
-  text-decoration: none;
-  font-weight: 600;
-  transition: opacity 0.3s ease;
-}
-
-.nav-links a:hover { opacity: 0.7; }
+.logo-img{height:70px;filter:brightness(0) invert(1)}
+.nav-links{list-style:none;display:flex;gap:2rem}
+.nav-links a{color:var(--blanco);text-decoration:none;font-weight:600;transition:opacity .3s}
+.nav-links a:hover{opacity:.7}
 
 /* ================= HERO ================= */
-.hero {
-  background: url('img/fotostock2.png') center/cover no-repeat;
-  background-blend-mode: luminosity; /* blanco y negro */
-  background-color: #111;
-  color: var(--blanco);
-  text-align: center;
-  padding: 8rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 90vh;
-  position: relative;
+.hero{
+  background:url('img/fotostock2.png') center/cover no-repeat;
+  background-blend-mode:luminosity;background-color:#111;color:var(--blanco);
+  text-align:center;padding:8rem 2rem;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  min-height:90vh;position:relative;
 }
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 1;
+.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55);z-index:1}
+.hero h1,.hero p,.hero .btn{position:relative;z-index:2}
+.hero h1{font-size:3rem;margin-bottom:1rem}
+.hero p{font-size:1.4rem;margin-bottom:2rem;max-width:650px;color:var(--gris-claro)}
+.hero .btn{
+  background:var(--gris-medio);color:var(--blanco);padding:.75rem 1.5rem;border-radius:5px;
+  text-decoration:none;font-weight:bold;transition:.3s;border:1px solid rgba(255,255,255,.2)
 }
-
-.hero h1,
-.hero p,
-.hero .btn {
-  position: relative;
-  z-index: 2;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--blanco);
-}
-
-.hero p {
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-  max-width: 650px;
-  color: var(--gris-claro);
-}
-
-.hero .btn {
-  background-color: var(--gris-medio);
-  color: var(--blanco);
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-.hero .btn:hover {
-  background-color: var(--blanco);
-  color: var(--negro);
-}
+.hero .btn:hover{background:var(--blanco);color:var(--negro)}
 
 /* ================= COMMITMENT ================= */
-.commitment {
-  padding: 5rem 0 6rem;       /* sin padding lateral -> carrusel a sangre */
-  background-color: var(--negro);
-  text-align: center;
+.commitment{
+  background:var(--negro);text-align:center;padding:5rem 0 6rem;
+}
+.commitment h2{margin:0 2rem 2rem;font-size:2.4rem;color:var(--blanco)}
+
+/* ===== Carrusel FULL-BLEED (a sangre, centrado) ===== */
+.commitment-carousel{
+  width:100vw;
+  margin:2.5rem calc(50% - 50vw) 0;   /* centro real sin transform */
+  padding:0;position:relative;
 }
 
-.commitment h2 {
-  margin: 0 2rem 2rem;        /* mantiene margen lateral del título */
-  font-size: 2.4rem;
-  color: var(--blanco);
+/* ==== Estilos base de cualquier carrusel ==== */
+.carousel{position:relative;margin:0 auto}
+.carousel-viewport{
+  overflow:hidden;border-radius:16px;box-shadow:0 8px 24px rgba(255,255,255,.08);
 }
-
-/* ===== Carrusel full-bleed y alto grande ===== */
-.commitment-carousel {
-  width: 100vw;               /* ocupar todo el ancho del viewport */
-  margin: 3rem 0 0 50%;
-  transform: translateX(-50%); /* centra el bloque 100vw */
-  position: relative;
+.carousel-track{display:flex;flex-wrap:nowrap;transition:transform .9s cubic-bezier(.77,0,.175,1);will-change:transform}
+.carousel-slide{flex:0 0 100%;min-width:100%;position:relative;transition:opacity .4s, transform .6s}
+.carousel-slide.current{opacity:1;transform:scale(1)}
+.carousel-slide:not(.current){opacity:.75;transform:scale(.985)}
+.carousel-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.3);
+  background:rgba(0,0,0,.35);color:#fff;font-size:1.2rem;cursor:pointer;transition:.2s;z-index:3;
 }
+.carousel-btn:hover{background:rgba(255,255,255,.22)}
+.carousel-btn.prev{left:1rem}.carousel-btn.next{right:1rem}
+.carousel-dots{display:flex;justify-content:center;gap:.5rem;margin-top:.75rem}
+.carousel-dots button{width:10px;height:10px;border-radius:50%;border:none;background:#777}
+.carousel-dots button[aria-selected="true"]{background:#fff}
 
-.commitment-carousel .carousel {
-  width: 100%;
-  max-width: none !important; /* anula el max-width global del carrusel */
-  margin: 0 !important;
-  padding: 0 !important;
-  position: relative;
+/* ==== Versión FULL-BLEED para la sección Commitment ==== */
+.commitment-carousel .carousel{
+  width:100vw;max-width:none;margin:0;padding:0;border-radius:0;box-shadow:none;
 }
-
-.commitment-carousel .carousel-viewport {
-  width: 100%;
-  height: clamp(420px, 80svh, 900px); /* grande; cambia a 100svh si lo quieres fullscreen real */
-  overflow: hidden;
-  border-radius: 0 !important;
-  box-shadow: none !important;
+.commitment-carousel .carousel-viewport{
+  width:100vw;height:clamp(340px,76svh,900px);border-radius:0;box-shadow:none;overflow:hidden;position:relative;
 }
-
 .commitment-carousel .carousel-track,
-.commitment-carousel .carousel-slide { height: 100%; }
+.commitment-carousel .carousel-slide{height:100%}
 
-.commitment-carousel .carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;          /* llena sin deformar */
-  object-position: center;
-  display: block;
-  filter: grayscale(100%);    /* elimina si quieres en color */
+/* Imagen ENTERA sin recortes + fondo difuminado */
+.commitment-carousel .carousel-slide{
+  display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0d0d0d;
 }
-
-/* Flechas superpuestas */
-.commitment-carousel .carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 56px; height: 56px;
-  font-size: 1.4rem;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.35);
-  background: rgba(0,0,0,.35);
-  color: #fff;
-  z-index: 3;
-  cursor: pointer;
-  transition: background .2s ease;
+.commitment-carousel .carousel-slide::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:var(--slide-bg, #0d0d0d) center/cover no-repeat;
+  filter:blur(24px) brightness(.55);transform:scale(1.08);
 }
-.commitment-carousel .carousel-btn.prev { left: 1rem; }
-.commitment-carousel .carousel-btn.next { right: 1rem; }
-.commitment-carousel .carousel-btn:hover { background: rgba(255,255,255,.22); }
-
-/* Dots superpuestos (no empujan el layout) */
-.commitment-carousel .carousel-dots {
-  position: absolute;
-  left: 50%;
-  bottom: 18px;
-  transform: translateX(-50%);
-  display: flex;
-  gap: .5rem;
-  z-index: 3;
-  margin: 0; /* anula margen global */
+.commitment-carousel .carousel-slide img{
+  position:relative;z-index:1;display:block;
+  width:auto;height:auto;max-width:100%;max-height:100%;
+  object-fit:contain;object-position:center;
+  border-radius:8px;box-shadow:0 0 24px rgba(0,0,0,.35);
 }
-.commitment-carousel .carousel-dots button {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  border: none;
-  background: #777;
-  opacity: .95;
+/* Dots superpuestos dentro del viewport */
+.commitment-carousel .carousel-dots{
+  position:absolute;left:50%;bottom:14px;transform:translateX(-50%);
+  margin:0;z-index:3;
 }
-.commitment-carousel .carousel-dots button[aria-selected="true"] { background: #fff; }
-
-/* Transición suave del track */
-.commitment-carousel .carousel-track {
-  transition: transform .9s cubic-bezier(.77,0,.175,1);
-  will-change: transform;
-}
+/* Flechas superpuestas más grandes */
+.commitment-carousel .carousel-btn{width:44px;height:44px}
 
 /* ================= SERVICES ================= */
-.services {
-  padding: 5rem 2rem 6rem;
-  background-color: var(--gris-oscuro);
-  text-align: center;
+.services{
+  padding:5rem 2rem 6rem;background:var(--gris-oscuro);text-align:center;
 }
-
-.services h2 {
-  margin-bottom: 2rem;
-  font-size: 2.4rem;
-  color: var(--blanco);
+.services h2{margin-bottom:2rem;font-size:2.4rem}
+.illustration img{
+  max-width:100%;border-radius:12px;box-shadow:0 4px 15px rgba(255,255,255,.1);
+  filter:grayscale(100%);
 }
-
-.illustration img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-  filter: grayscale(100%);
+.image-caption{margin-top:1rem;font-size:.95rem;color:var(--gris-claro)}
+.service-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:2.5rem;margin-top:3rem}
+.card{
+  background:var(--gris-medio);padding:2rem;border-radius:12px;width:320px;
+  box-shadow:0 6px 12px rgba(255,255,255,.05);transition:transform .3s, box-shadow .3s;
 }
-
-.image-caption {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  color: var(--gris-claro);
-}
-
-.service-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2.5rem;
-  margin-top: 3rem;
-}
-
-.card {
-  background-color: var(--gris-medio);
-  padding: 2rem;
-  border-radius: 12px;
-  width: 320px;
-  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card h3 {
-  margin-bottom: 1rem;
-  color: var(--blanco);
-  font-size: 1.25rem;
-}
-
-.card p {
-  color: var(--gris-claro);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-}
+.card h3{margin-bottom:1rem;font-size:1.25rem}
+.card p{color:var(--gris-claro)}
+.card:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(255,255,255,.1)}
 
 /* ================= PROJECTS ================= */
-.projects {
-  padding: 5rem 2rem;
-  background-color: var(--negro);
-  text-align: center;
+.projects{padding:5rem 2rem;background:var(--negro);text-align:center}
+.projects h2{margin-bottom:2.5rem;font-size:2.2rem}
+.project-gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:3rem}
+.project{width:500px;transition:transform .3s}
+.project img{
+  width:100%;height:300px;object-fit:cover;border-radius:16px;filter:grayscale(100%);
+  transition:transform .3s, filter .5s;
 }
-
-.projects h2 {
-  margin-bottom: 2.5rem;
-  font-size: 2.2rem;
-  color: var(--blanco);
-}
-
-.project-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
-}
-
-.project {
-  width: 500px;
-  transition: transform 0.3s ease;
-}
-
-.project img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 16px;
-  filter: grayscale(100%);
-  transition: transform 0.3s ease, filter 0.5s ease;
-}
-
-.project:hover img {
-  transform: scale(1.05);
-  filter: grayscale(0%); /* al pasar el ratón vuelve al color */
-}
-
-.project h3 {
-  margin-top: 0.75rem;
-  color: var(--gris-claro);
-  font-size: 1.2rem;
-}
+.project:hover img{transform:scale(1.05);filter:grayscale(0%)}
+.project h3{margin-top:.75rem;color:var(--gris-claro);font-size:1.2rem}
 
 /* ================= CONTACTO ================= */
-.contact {
-  padding: 5rem 2rem;
-  background-color: var(--gris-oscuro);
-  text-align: center;
+.contact{padding:5rem 2rem;background:var(--gris-oscuro);text-align:center}
+.contact h2{margin-bottom:2.5rem;font-size:2.2rem}
+#contact-form{
+  max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:1.5rem;
 }
-
-.contact h2 {
-  margin-bottom: 2.5rem;
-  font-size: 2.2rem;
-  color: var(--blanco);
+#contact-form input,#contact-form textarea{
+  padding:1rem;border:1px solid #444;border-radius:6px;font-size:1rem;background:var(--gris-medio);color:var(--blanco)
 }
-
-#contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+#contact-form button{
+  padding:1rem;background:var(--blanco);color:var(--negro);border:none;border-radius:6px;font-weight:bold;font-size:1rem;
+  cursor:pointer;transition:.3s;
 }
-
-#contact-form input,
-#contact-form textarea {
-  padding: 1rem;
-  border: 1px solid #444;
-  border-radius: 6px;
-  font-size: 1rem;
-  background-color: var(--gris-medio);
-  color: var(--blanco);
-}
-
-#contact-form button {
-  padding: 1rem;
-  background-color: var(--blanco);
-  color: var(--negro);
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#contact-form button:hover {
-  background-color: var(--gris-claro);
-}
+#contact-form button:hover{background:var(--gris-claro)}
 
 /* ================= FOOTER ================= */
-footer {
-  background-color: var(--gris-medio);
-  color: var(--gris-claro);
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
+footer{background:var(--gris-medio);color:var(--gris-claro);text-align:center;padding:1rem;font-size:.9rem}
 
-/* ================= CAROUSEL (estilos base globales) ================= */
-.carousel {
-  position: relative;
-  max-width: 1100px;
-  margin: 3rem auto;
-  padding: 0 3rem;
-}
-
-.carousel-viewport {
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(255,255,255,0.08);
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: grayscale(100%);
-}
-
-.slide-caption {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: 0.75rem 1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
-  color: var(--blanco);
-}
-
-/* Flechas (base) */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 42px; height: 42px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.3);
-  background: rgba(255,255,255,0.1);
-  color: var(--blanco);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.carousel-btn:hover { background: rgba(255,255,255,0.3); }
-.carousel-btn.prev { left: 1rem; }
-.carousel-btn.next { right: 1rem; }
-
-/* Dots (base) */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-}
-.carousel-dots button {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  border: none;
-  background: #666;
-}
-.carousel-dots button[aria-selected="true"] { background: var(--blanco); }
-
-/* Animación base */
-.carousel-track {
-  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
-  will-change: transform;
-}
-
-/* Enfoque slide activa (base) */
-.carousel-slide {
-  transition: opacity 0.4s ease, transform 0.6s ease;
-}
-.carousel-slide.current {
-  opacity: 1;
-  transform: scale(1);
-}
-.carousel-slide:not(.current) {
-  opacity: 0.5;
-  transform: scale(0.96);
-}
-
-/* Respeto a reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  .carousel-track,
-  .carousel-slide { transition: none !important; }
+/* ================= ACCESIBILIDAD ================= */
+@media (prefers-reduced-motion:reduce){
+  .carousel-track,.carousel-slide,*{transition:none !important;scroll-behavior:auto !important}
 }
 
 /* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .navbar { flex-direction: column; gap: 1rem; padding: 1rem; }
-  .nav-links { flex-direction: column; gap: 1rem; }
-  .service-cards, .project-gallery { flex-direction: column; gap: 2rem; }
-  .card { width: 100%; }
-  .project { width: 100%; }
-  .commitment h2 { font-size: 2rem; }
-  .commitment-carousel .carousel-viewport { height: clamp(320px, 72svh, 780px); }
+@media (max-width:768px){
+  .navbar{flex-direction:column;gap:1rem;padding:1rem}
+  .nav-links{flex-direction:column;gap:1rem}
+  .card,.project{width:100%}
+  .commitment h2{font-size:2rem}
+  .commitment-carousel .carousel-viewport{height:clamp(300px,70svh,740px)}
+  .commitment-carousel .carousel-btn{width:40px;height:40px}
+}
+@media (max-width:480px){
+  .commitment h2{font-size:1.75rem;margin:0 1rem 1.25rem}
 }
 
-/* ===== CARRUSEL BONITO SIN RECORTES – FONDO DIFUMINADO ===== */
-.commitment-carousel .carousel-viewport {
-  position: relative;
-  height: clamp(420px, 80svh, 900px);
-  overflow: hidden;
+/* ===== 1) Blanco y negro en el carrusel ===== */
+.commitment-carousel .carousel-slide img{
+  filter: grayscale(100%) !important;
 }
 
-/* Cada slide centra la imagen completa */
-.commitment-carousel .carousel-slide {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  overflow: hidden;
-}
+/* ===== 2) Compactar SOLO en móvil (quitar franjas) ===== */
+@media (max-width: 768px){
+  /* menos aire arriba/abajo de la sección */
+  .commitment{
+    padding: 1rem 0 1.25rem !important;
+  }
 
-/* Fondo borroso del mismo contenido */
-.commitment-carousel .carousel-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  background-size: cover;
-  background-position: center;
-  filter: blur(40px) brightness(0.5);
-  transform: scale(1.1);
-  z-index: 0;
-}
+  /* título más pegado */
+  .commitment h2{
+    margin: 0 1rem .75rem !important;
+    font-size: 1.9rem !important;
+  }
 
-/* Imagen principal visible entera */
-.commitment-carousel .carousel-slide img {
-  position: relative;
-  z-index: 1;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  transition: transform 0.4s ease;
-}
+  /* carrusel a sangre pero con menos separación vertical */
+  .commitment-carousel{
+    margin: .5rem calc(50% - 50vw) 0 !important; /* quita el gran “gap” superior */
+    padding: 0 0 .75rem !important;               /* poco aire abajo */
+  }
 
-/* Sin recortes ni zoom */
-.commitment-carousel .carousel-slide,
-.commitment-carousel .carousel-slide.current {
-  opacity: 1 !important;
-  transform: none !important;
-}
+  .commitment-carousel .carousel{
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-/* Ajuste responsive */
-@media (max-width: 768px) {
-  .commitment-carousel .carousel-viewport {
-    height: clamp(340px, 70svh, 740px);
+  /* alto más contenido en móvil para que no deje huecos */
+  .commitment-carousel .carousel-viewport{
+    height: clamp(280px, 62svh, 560px) !important;
+  }
+
+  /* dots un pelín más arriba por el menor alto */
+  .commitment-carousel .carousel-dots{
+    bottom: 10px !important;
+  }
+
+  /* flechas un poco más pequeñas */
+  .commitment-carousel .carousel-btn{
+    width: 38px !important;
+    height: 38px !important;
   }
 }
 
-/* ===== Espaciado inferior del carrusel ===== */
-.carousel-slide {
-  padding-bottom: 4rem; /* margen visual agradable debajo del carrusel */
+/* ===== MÓVIL ULTRA-COMPACTO PARA EL CARRUSEL ===== */
+@media (max-width: 768px){
+  /* quita prácticamente todo el aire de la sección */
+  .commitment{ padding: 0 !important; }
+
+  /* si quieres, oculta el título para ganar más alto (descomenta) */
+  /* .commitment h2{ display:none !important; } */
+
+  /* cero separación vertical del carrusel y a sangre total */
+  .commitment-carousel{
+    margin: 0 calc(50% - 50vw) 0 !important;
+    padding: 0 !important;
+  }
+
+  /* anula cualquier margen/padding heredado del carrusel base */
+  .commitment-carousel .carousel{
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* alto más contenido para que no deje huecos negros */
+  .commitment-carousel .carousel-viewport{
+    height: clamp(220px, 52svh, 420px) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* imagen en B/N y sin recortes (entera) */
+  .commitment-carousel .carousel-slide img{
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    filter: grayscale(100%) !important;
+    border-radius: 8px;
+  }
+
+  /* dots y flechas más pequeños y pegados */
+  .commitment-carousel .carousel-dots{
+    bottom: 8px !important;
+    margin: 0 !important;
+  }
+  .commitment-carousel .carousel-btn{
+    width: 34px !important;
+    height: 34px !important;
+  }
 }
+
+/* Seguridad: el carrusel de Compromiso nunca hereda márgenes grandes de .carousel global */
+.commitment-carousel .carousel{ margin:0 !important; padding:0 !important; }
+
+/* BN fijo en el carrusel (también en desktop) */
+.commitment-carousel .carousel-slide img{ filter: grayscale(100%) !important; }
